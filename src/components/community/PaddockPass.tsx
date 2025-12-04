@@ -3,6 +3,7 @@
 import React from 'react';
 import { MessageCircle, Share2, Clock, ChevronRight, Newspaper } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface NewsItem {
   id: number;
@@ -69,9 +70,11 @@ const PaddockPass = () => {
         <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#101010] transition-transform duration-300 hover:scale-[1.01]">
           {topStory.image && (
             <div className="h-44 w-full relative">
-              <img
+              <Image
                 src={topStory.image}
                 alt={topStory.title}
+                width={176}
+                height={176}
                 className="w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
@@ -114,9 +117,11 @@ const PaddockPass = () => {
               
               {item.image && (
                 <div className="h-24 w-full relative">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
+                    width={96}
+                    height={96}
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background-deep to-transparent" />

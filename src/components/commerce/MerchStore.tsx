@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { ShoppingBag, Plus, Heart, X, Trash2, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Aggiornato con i percorsi locali delle tue immagini
 const products = [
@@ -73,9 +74,11 @@ const MerchStore = () => {
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent z-0 pointer-events-none" />
 
-            <img
+            <Image
               src={item.image}
               alt={item.name}
+              width={200}
+              height={250}
               className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
             />
 
@@ -144,7 +147,7 @@ const MerchStore = () => {
               {/* Item 1 nel carrello (usa immagine locale) */}
               <div className="flex gap-4 p-3 rounded-xl bg-white/5 border border-white/5">
                 <div className="w-16 h-16 bg-white/10 rounded-lg overflow-hidden">
-                    <img src="/merch/hoodie.png" className="w-full h-full object-cover"/>
+                    <Image src="/merch/hoodie.png" width={64} height={64} className="w-full h-full object-cover" alt="Hoodie in cart"/>
                 </div>
                 <div className="flex-1">
                   <h3 className="font-bold text-white text-sm">Neon Team Hoodie</h3>
@@ -161,7 +164,7 @@ const MerchStore = () => {
               {/* Item 2 nel carrello (usa immagine locale) */}
               <div className="flex gap-4 p-3 rounded-xl bg-white/5 border border-white/5">
                 <div className="w-16 h-16 bg-white/10 rounded-lg overflow-hidden">
-                    <img src="/merch/cap.png" className="w-full h-full object-cover"/>
+                    <Image src="/merch/cap.png" width={64} height={64} className="w-full h-full object-cover" alt="Cap in cart"/>
                 </div>
                 <div className="flex-1">
                   <h3 className="font-bold text-white text-sm">Carbon Cap 2025</h3>
